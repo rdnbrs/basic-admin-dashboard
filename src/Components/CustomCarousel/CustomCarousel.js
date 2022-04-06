@@ -10,7 +10,7 @@ function CustomCarousel(props) {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            if (sIndex < props.items.lengt - 1)
+            if (sIndex < props.items.length - 1)
                 setSIndex(sIndex + 1)
             else
                 setSIndex(0)
