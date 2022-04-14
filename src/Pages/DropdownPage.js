@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Dropdown from "../Components/Dropdown/Dropdown";
+import Multiselect from "../Components/Dropdown/Multiselect";
 
 function DropdownPage() {
 
@@ -18,9 +19,12 @@ function DropdownPage() {
         setSelectedValue(item.item)
     }
 
+    const [selectedList, setSelectedList] = useState([])
+
     return (
         <div>
             <Dropdown setSelectedItem={(item) => { changeDropdownValue(item) }} optionList={optionList} selectedItem={selectedValue.key} />
+            <Multiselect setSelectedItem={(item) => { changeDropdownValue(item) }} optionList={optionList} selectedItem={selectedValue.key} selectedList={selectedList} setSelectedList={setSelectedList} />
         </div>
     )
 
