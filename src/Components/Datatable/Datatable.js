@@ -49,6 +49,12 @@ function Datatable(props) {
                         handleMultipleSelection(element, `insert`)
                     });
             }
+            else{
+                if (item.hasChild && Array.isArray(item.child.data))
+                    item.child.data.forEach(element => {
+                        handleMultipleSelection(element, `remove`)
+                    });
+            }
         }
 
         props.setSelectedItems([...temp])
