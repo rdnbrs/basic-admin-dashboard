@@ -35,6 +35,11 @@ function Datatable(props) {
                     item.child.data.forEach(element => {
                         handleMultipleSelection(element, `remove`)
                     });
+            }else{
+                if (item.hasChild && Array.isArray(item.child.data))
+                    item.child.data.forEach(element => {
+                        handleMultipleSelection(element, `insert`)
+                    });
             }
         } else {
             if (operation === `insert` || operation === undefined) {
@@ -71,7 +76,6 @@ function Datatable(props) {
 
     const rerenderTable = () => {
         try {
-            debugger
             props.setBodyInfo([...props.bodyInfos])
         }
         catch (e) {
@@ -115,7 +119,7 @@ function Datatable(props) {
                                 props?.bodyInfos.map(item => {
                                     return (
                                         <>
-                                            <tr key="" onClick={() => onRowClicked(item)}>
+                                            <tr key="">
                                                 {
                                                     props?.selection &&
                                                     <>
@@ -132,10 +136,10 @@ function Datatable(props) {
                                                 {
                                                     Object.keys(item.data).map(sItem => {
                                                         if (!item.data[sItem]?.isButton)
-                                                            return <td className="tbl-txt">{item.data[sItem]}</td>
+                                                            return <td className="tbl-txt" onClick={() => onRowClicked(item)}>{item.data[sItem]}</td>
                                                         else
                                                             return (
-                                                                <td className="tbl-txt" align="center">
+                                                                <td className="tbl-txt" align="center" onClick={() => onRowClicked(item)}>
                                                                     {item[sItem]?.buttons.map(bItem => {
                                                                         return <>{bItem.icon}</>
                                                                     })}
@@ -151,7 +155,7 @@ function Datatable(props) {
                                                         props?.selection &&
                                                         <td></td>
                                                     }
-                                                    <td colSpan={Object.keys(item.data).length}>
+                                                    <td colSpan={Object.keys(item.data).length} onClick={() => onRowClicked(item)}>
                                                         {item?.child?.data}
                                                     </td>
                                                 </tr>
