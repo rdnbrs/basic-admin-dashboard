@@ -7,6 +7,11 @@ import Navbar from "./Components/Navbar/Navbar"
 import Table from "./Pages/Table"
 import DropdownPage from "./Pages/DropdownPage"
 import AccordionPage from "./Pages/AccordionPage"
+import ModalPage from "./Pages/ModalPage"
+import Category from "./Pages/Category"
+import Topic from "./Pages/Topic"
+import PItem from "./Pages/PItem"
+import Poll from "./Pages/Poll"
 
 export function App() {
     return (
@@ -23,6 +28,11 @@ export function App() {
                             <Route path="/table" element={<Table />} />
                             <Route path="/dropdown" element={<DropdownPage />} />
                             <Route path="/accordion" element={<AccordionPage />} />
+                            <Route path="/modal" element={<ModalPage />} />
+                            <Route path="/category" element={<Category />} />
+                            <Route path="/topic" element={<Topic />} />
+                            <Route path="/item" element={<PItem />} />
+                            <Route path="/pickroll" element={<Poll />} />
                         </Routes>
                     </div>
                 </Router>

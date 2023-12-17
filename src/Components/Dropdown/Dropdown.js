@@ -40,7 +40,7 @@ function Dropdown(props) {
             <label style={{paddingLeft:"5px"}}>{display}</label>
             <div className={!displayOptions ? "dropdown-content" : "dropdown-content show"}>
                 {props.optionList.map(item => {
-                    return <div id="item" onClick={() => { selectItem({ item }) }}>{item.value}</div>
+                    return <div id="item" key="" onClick={() => { selectItem({ item }) }}>{item.value}</div>
                 })}
             </div>
         </div>

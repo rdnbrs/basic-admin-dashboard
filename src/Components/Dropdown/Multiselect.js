@@ -13,7 +13,6 @@ function Multiselect(props) {
             newArr.splice(props.selectedList.indexOf(item.item), 1)
             props.setSelectedList([...newArr])
         }
-
     }
 
     const openDropdown = () => {
@@ -37,12 +36,10 @@ function Multiselect(props) {
                 {props.optionList.map(item => {
                     let isSelected = false
                     props.selectedList.forEach(sItem => {
-                        if (item.key == sItem.key) {
+                        if (item.key == sItem.key)
                             isSelected = true
-                            console.log(isSelected)
-                        }
                     })
-                    return <div id="item" onClick={() => { selectItem({ item }) }}><input type="checkbox" disabled checked={isSelected}></input>{item.value}</div>
+                    return isSelected ? <div id="item" onClick={() => { selectItem({ item }) }} style={{ backgroundColor: "#8a48f4", color: "black" }}>{item.value}</div> : <div id="item" onClick={() => { selectItem({ item }) }}>{item.value}</div>
                 })}
             </div>
         </div>
