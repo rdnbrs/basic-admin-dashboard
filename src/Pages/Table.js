@@ -8,12 +8,12 @@ function Table() {
     const [selectedItems, setSelectedItems] = useState([])
     //const [selectedItem, setSelectedItem] = useState({})
     const [headerInfos, setHeaderInfo] = useState([
-        { title: "t1", width: "11%", sortable: true, sortKey: `t1`, sort: `desc`, filterable: true, filter: ``, filterKey: `t1` },
+        { title: "t1 - ID", width: "11%", sortable: true, sortKey: `t1`, sort: `desc`, filterable: true, filter: ``, filterKey: `t1` },
         { title: "t2", width: "11%", sortable: false, filterable: true, filter: `` },
         { title: "t3", width: "11%", sortable: false, filterable: true, filter: `` },
-        { title: "t4", sortable: false, filterable: true, filter: `` },
+        { title: "t4", sortable: false, filterable: false, filter: `` },
         { title: "t5", sortable: false, filterable: true, filter: `` },
-        { title: "t6", sortable: false, filterable: true, filter: `` },
+        { title: "t6", sortable: false, filterable: false, filter: `` },
         { title: "t7", width: "3%", sortable: false, filterable: false, filter: `` }
     ])
     const [bodyInfos, setBodyInfo] = useState([

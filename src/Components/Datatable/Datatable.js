@@ -79,6 +79,12 @@ function Datatable(props) {
         }
     }
 
+    const onFilterChange = (e, index) =>{
+        let tempHeaders = [...props.headerInfos]
+        tempHeaders[index].filter = e.target.value
+        props.setHeaderInfo([...tempHeaders])
+    }
+
     return (
         <>
             <div className="table-scroll">
@@ -94,7 +100,7 @@ function Datatable(props) {
                                 {
                                     props?.headerInfos.map((item, index) => {
                                         if (item.width)
-                                            return <th style={{ width: item.width }} onClick={() => onHandleHeaderSort(index)} >{item.title} <br />{item.filterable && <input style={{ width: `100%` }}></input>}</th>
+                                            return <th style={{ width: item.width }} onClick={() => onHandleHeaderSort(index)} >{item.title} <br />{item.filterable && <input name={item.filterKey} style={{ width: `100%` }} onChange={(e)=>onFilterChange(e, index)}></input>}</th>
                                         else
                                             return <th onClick={() => onHandleHeaderSort(index)}>{item.title} <br />{item.filterable && <input style={{ width: `100%` }}></input>}</th>
                                     })
