@@ -25,7 +25,10 @@ function Table() {
                 t4: "4",
                 t5: "5",
                 t6: "6",
-                t7: <button onClick={() => { console.log("here") }}>Operation</button>
+                t7: {
+                    isButton: true,
+                    buttons: [<button onClick={() => { console.log("here 3") }}>Operation</button>]
+                }
             },
             hasChild: false,
             child: {},
@@ -38,7 +41,10 @@ function Table() {
                 t4: "4",
                 t5: "5",
                 t6: "6",
-                t7: <button onClick={() => { console.log("here 1") }}>Operation</button>
+                t7: {
+                    isButton: true,
+                    buttons: [<button onClick={() => { console.log("here 3") }}>Operation</button>]
+                }
             },
             hasChild: true,
             child: {
@@ -57,7 +63,10 @@ function Table() {
                 t4: "4",
                 t5: "5",
                 t6: "6",
-                t7: <button onClick={() => { console.log("here 2") }}>Operation</button>
+                t7: {
+                    isButton: true,
+                    buttons: [<button onClick={() => { console.log("here 3") }}>Operation</button>]
+                }
             },
             hasChild: true,
             child: {
@@ -147,7 +156,10 @@ function Table() {
                 t4: "4",
                 t5: "5",
                 t6: "6",
-                t7: <button onClick={() => { console.log("here 3") }}>Operation</button>
+                t7: {
+                    isButton: true,
+                    buttons: [<button onClick={() => { console.log("here 3") }}>Operation</button>]
+                }
             },
             hasChild: false,
             child: {},

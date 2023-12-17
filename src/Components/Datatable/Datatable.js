@@ -137,14 +137,16 @@ function Datatable(props) {
                                                     Object.keys(item.data).map(sItem => {
                                                         if (!item.data[sItem]?.isButton)
                                                             return <td className="tbl-txt" onClick={() => onRowClicked(item)}>{item.data[sItem]}</td>
-                                                        else
+                                                        else{
                                                             return (
-                                                                <td className="tbl-txt" align="center" onClick={() => onRowClicked(item)}>
-                                                                    {item[sItem]?.buttons.map(bItem => {
-                                                                        return <>{bItem.icon}</>
+                                                                <td className="tbl-txt" align="center">
+                                                                    {item.data[sItem]?.buttons.map(bItem => {
+                                                                        return <>{bItem}</>
                                                                     })}
                                                                 </td>
                                                             )
+                                                        }
+                                                            
                                                     })
                                                 }
                                             </tr>
